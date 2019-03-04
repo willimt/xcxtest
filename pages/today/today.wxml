@@ -1,0 +1,27 @@
+<swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  indicator-dots="true"
+  autoplay="true"
+>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='items-list'>
+  <view class='pro-item' wx:for="{{myTasks}}">
+    <image class='pro-logo'src='/image/check_unselected.png'></image>
+    <view class='pro-body'>
+      <view class='pro-title'>{{item.name}}</view>
+      <text class='pro-dec'>{{item.detile}}</text>
+    </view>
+    <image class='pro-detile' src='/image/added.png' bindtap='taskOk'></image>
+  </view>
+
+
+</view>

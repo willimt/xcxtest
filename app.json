@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/today/today",
+    "pages/add/add",
+    "pages/add/success/success",
+    "pages/my/my",
+    "pages/list/list"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "KEEP",
+    "backgroundColor": "red",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#b2b2b2",
+    "selectedColor": "#2fcc85",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/today/today",
+        "text": "打卡",
+        "iconPath": "image/icon_task_unselected.png",
+        "selectedIconPath": "image/icon_task_selected.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "任务列表",
+        "iconPath": "image/icon_task_unselected.png",
+        "selectedIconPath": "image/icon_task_selected.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "text": "新建打卡",
+        "iconPath": "image/add_unselected.png",
+        "selectedIconPath": "image/add_selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "image/icon_total-people@3x.png",
+        "selectedIconPath": "image/icon_total-people@3x.png"
+      }
+    ]
+  }
+}
