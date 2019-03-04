@@ -5,30 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    command:''
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      command:options.command
-    })
+
   },
   bindClose: function(){
     wx.navigateBack({
-      delta:1,
-      success: function(res){
-
-      },
-      fail: function(){
-
-      },
-      complete: function(){
-        
-      }
-
+      delta:1
     })
   },
   /**

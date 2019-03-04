@@ -14,35 +14,6 @@ Page({
     interval: 5000,
     duration: 1000,
     myTasks:[
-      {
-        name:'早起',
-        detile:'早起打卡'
-      },
-      {
-        name:'上课',
-        detile:'高数'
-      },
-      {
-        name: '上课',
-        detile: '高数'
-      },
-      {
-        name: '上课',
-        detile: '高数'
-      },
-      {
-        name: '上课',
-        detile: '高数'
-      },
-      {
-        name: '上课',
-        detile: '高数'
-      },
-      {
-        name: '上课',
-        detile: '高数'
-      },
-
     ]
   },
 

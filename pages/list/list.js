@@ -1,18 +1,26 @@
-// pages/list/list.js
+var util = require('../../utils/util.js');
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tabIndex: 0,
+    tasks: [],
+    hotTasks: [],
+    userInfo: {},
+    openId: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var temptasks=wx.getStorageSync('tasks');
+    this.setData({
+      'tasks':temptasks
+    })
   },
 
   /**

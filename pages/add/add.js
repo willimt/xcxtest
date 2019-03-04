@@ -8,6 +8,7 @@ Page({
    */
   data: {
     task:{
+      inputValue:'',
       name:'',
       signTime:'00:00',
       signEarlyTime:'00:00',
@@ -29,7 +30,7 @@ Page({
     }
   },
   //设置任务名称
-  nameInput: function(e){
+  bindKeyInput: function(e){
     this.setData({
       'task.name':e.detail.value
     });
@@ -63,9 +64,9 @@ Page({
     })
   },
   changeTuesday: function(e){
-    var state=this.data.task.repeat.teusday;
+    var state=this.data.task.repeat.tuesday;
     this.setData({
-      'task.repeat.tuesday':(state==1?0:1)
+      'task.repeat.tuesday': (state == 1 ? 0 : 1)
     })
   },
   changeWednesday: function (e) {
@@ -146,74 +147,18 @@ Page({
       }
     }
   },
-  /*createTask: function(e){
-    var that=this;
-    var task=this.data.task;
-    var openId=this.data.openId;
-    var userInfo=this.data.userInfo;
-    wx.showToast({
-      title: '创建中',
-      icon: 'loading',
-      duration:3000
-    });
-    wx.request({
-      url: '',
-      data:{
-        name:task.name,
-        startTime:task.startTime,
-        startDay:task.startDay,
-        endDay:task.endDay,
-        signTime:task.signTime,
-        latitude: task.latitude,
-        longitude: task.longitude,
-        repeat:{
-          'monday': task.repeat.monday,
-          'tuesday': task.repeat.tuesday,
-          'wednesday': task.repeat.wednesday,
-          'thursday': task.repeat.thursday,
-          'friday': task.repeat.friday,
-          'saturday': task.repeat.saturday,
-          'sunday': task.repeat.sunday
-        },
-        userInfo:{
-          openId:openId,
-          nickName:userInfo.nickName,
-          avatarUrl:userInfo.avatarUrl
-        }
-      },
-      method:'post',
-      header:{
-        'Content-Type': 'application/json'
-      },
-      success: function(res){
-        wx.hideToast();
-
-        var command=res.data.taskID;
-        wx.navigateTo({
-          url: '/pages/add/success/success?command='+command,
-          success: function(res){
-
-          },
-          fail: function(){
-
-          },
-          complete:function(){
-
-          }
-        })
-      },
-      fail: function(){
-
-      },
-      complete: function(){
-
-      }
-    })
-  },*/
+  
   createTask: function (e){
     var temptasks=wx.getStorageSync('tasks');
     temptasks.push(this.data.task);
+    wx.setStorageSync('tasks', temptasks);
     console.log(wx.getStorageSync('tasks'));
+    wx.navigateTo({
+      url: '../add/success/success',
+    })
+    this.setData({
+      inputValue:""
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

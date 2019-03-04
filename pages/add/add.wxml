@@ -4,7 +4,7 @@
     <!-- 打卡任务名称 -->
     <view class='mod t-name'>
       <text class='key'>任务名称</text>
-      <input class='input' bindtap='nameInput' maxlength='100' placeholder='请输入打卡名称'></input> 
+      <input class='input' bindinput="bindKeyInput" maxlength='100' placeholder='请输入打卡名称' value='{{inputValue}}'></input> 
       <image class='arrow-r' src='/image/arrow-r-0.png'></image>   
     </view>
   </view>

@@ -1,2 +1,41 @@
-<!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+<view class="task-page">
+    
+    <!-- 切换菜单 -->
+    <view class="t-menu">
+        <view class="t-menu-btn {{tabIndex ? '' : 'selected'}}" bindtap="changeTab" id="myTask">
+            <text>我的任务</text>
+        </view>
+        <view class="t-menu-btn {{tabIndex ? 'selected' : ''}}" bindtap="changeTab" id="hotTask">
+            <text>已完成</text>
+        </view>
+    </view>
+
+    <!-- 任务分类 -->
+    <view class="t-inner">
+        
+        <view class="t-content-wrap">
+            
+            <!-- 我的任务 -->
+            <view id="myTaskList" class="t-content {{tabIndex ? '' : 't-content-show'}}">
+                <scroll-view scroll-y="true" style="height: 900rpx;">
+                    <block wx:for-items="{{tasks}}">
+                        <view class="task-item-wrap">
+                            <view class="task-item type{{item.state}}">
+                                <view class="flag"></view>
+                                <view class="task-item-inner {{item.open ? 'task-info-show' : ''}}">
+                                    <view class="task-info" id="record_{{item._id}}" data-taskname="{{item.name}}" data-taskstart="{{item.startDay}}" data-taskend="{{item.endDay}}" bindtap="showRecord">
+                                    </view>
+                                </view>
+                            </view>
+                          </view>
+                    </block>
+                </scroll-view>            
+            </view>
+
+           
+        </view>
+        
+    </view>
+
+</view>
+
